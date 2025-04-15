@@ -1,8 +1,10 @@
-
 **PRESENTATION**
+
 - Valentino Alonso Contreras Traverso
 Soy un alumno de ciclo 3 de la utec que le gusta mucho tocar pasto.
 
+-Leandro Demarini
+  Soy Leandro y soy alumno de CS en UTEC
 
-- ANdy Berrú Tenorio
-- Sou alumno de CS de utec
+- Andy Berrú Tenorio
+  Soy alumno de CS de utec
