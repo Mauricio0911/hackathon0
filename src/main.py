@@ -66,3 +66,32 @@ def calculate(expression: str):
         return int(result) if result.is_integer() else result
     except ValueError:
         raise ValueError("Invalid character or syntax")
+def calculate(expression: str):
+    expression = expression.strip()
+    if not expression:
+        raise ValueError("Empty input")
+    # Solo se permiten dígitos, punto, el signo - y espacios.
+    allowed_chars = "0123456789.- "
+    for char in expression:
+        if char not in allowed_chars:
+            raise ValueError("Invalid character in expression")
+    try:
+        # Se asume que la expresión contiene únicamente restas.
+        parts = expression.split('-')
+        if parts[0] == "":
+            # Si la expresión inicia con "-" se interpreta el primer número negativo.
+            if len(parts) < 2 or parts[1].strip() == "":
+                raise SyntaxError("Invalid syntax")
+            result = -float(parts[1].strip())
+            parts = parts[2:]
+        else:
+            result = float(parts[0].strip())
+            parts = parts[1:]
+        for part in parts:
+            part = part.strip()
+            if part == "":
+                raise SyntaxError("Invalid syntax")
+            result -= float(part)
+        return int(result) if result.is_integer() else result
+    except ValueError:
+        raise ValueError("Invalid character or syntax")
